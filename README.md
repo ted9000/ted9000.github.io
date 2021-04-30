@@ -1,3 +1,3 @@
-http://ted9000.github.io/index.html
+https://ted9000.github.io/
 click it
 /??
