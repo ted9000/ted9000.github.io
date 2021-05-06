@@ -7,32 +7,16 @@ body {
   font-size: 25px;
 }
 
-.split {
-  height: 100%;
-  width: 50%;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  overflow-x: hidden;
-  padding-top: 20px;
+.column {
+  float: left;
+  width: 33.33%;
 }
 
-.left {
-  left: 0;
-  background-color: red;
-}
-
-.right {
-  right: 0;
-  background-color: blue;
-}
-
-.centered {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
 }
   
 </style>
@@ -40,8 +24,8 @@ body {
  
 <body>
  
-<div class="split left">
-  <div class="centered">
+<div class="row">
+  <div class="column" style="background-color:#FF0000;">
     <p><u><b> ZERO PLAYER PONG - CLICK IMAGE FOR FULL GAME </b></u><p>
     <a href="https://ted9000.github.io/pong2ai" target="_blank">
       <img alt="pong2ai" src="https://ted9000.github.io/images/pong2ai.png" width=281" height="188">
@@ -49,15 +33,23 @@ body {
     <p> Preview: </p>
     <iframe src="https://ted9000.github.io/pong2ai" height="188" width="281"></iframe>
   </div>
-</div>
+
                                                                          
-<div class="split right">
-  <div class="centered">
+  <div class="column" style="background-color:#00FF00;">
     <p><u><b> SINGLE PLAYER PONG - CLICK IMAGE FOR FULL GAME </b></u><p>
     <a href="https://ted9000.github.io/pong1ai" target="_blank">
       <img alt="pong1ai" src="https://ted9000.github.io/images/pong1ai.png" width=281" height="188">
     </a>
     <p> Preview: </p>
     <iframe src="https://ted9000.github.io/pong1ai" height="188" width="281"></iframe>
+  </div>
+  
+  <div class="column" style="background-color:#0000FF;">
+    <p><u><b> TWO PLAYER PONG - CLICK IMAGE FOR FULL GAME </b></u><p>
+    <a href="https://ted9000.github.io/pong0ai" target="_blank">
+      <img alt="pong0ai" src="https://ted9000.github.io/images/pong0ai.png" width=281" height="188">
+    </a>
+    <p> Preview: </p>
+    <iframe src="https://ted9000.github.io/pong0ai" height="188" width="281"></iframe>
   </div>
 </div>
