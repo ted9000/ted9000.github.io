@@ -1,0 +1,34 @@
+function stoptimer()
+	timer.delay(delay, false, function(self)
+		print("done", delay)
+		stop = 1
+	end)
+end
+
+function init(self)
+	self.rotation = 0
+	math.randomseed(os.clock() * 100000000000)
+	speed = 1000
+	delay = (math.random(20,100))/50
+	stoptimer()
+end
+
+
+
+function update(self, dt)
+	
+	if stop == 1 then
+		if speed > 1 then
+			speed = speed * 0.99
+		else
+			speed = 0
+		end
+	else
+		speed = 1000
+	end
+
+	self.rotation = self.rotation + speed * dt
+	go.set("go", "euler.z", self.rotation)
+
+	
+end
