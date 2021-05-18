@@ -1,8 +1,0 @@
-key_trigger {
-  input: KEY_ENTER
-  action: "restart"
-}
-mouse_trigger {
-  input: MOUSE_BUTTON_1
-  action: "touch"
-}
