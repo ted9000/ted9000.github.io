@@ -79,12 +79,13 @@
 		}
 
 	h2 {
+		color: #000000;
 		font-size: 1.75em;
 		line-height: 1.5em;
 	}
 
 	h3 {
-		font-size: 1.25em;
+		font-size: 1.5em;
 		line-height: 1.5em;
 	}
 
@@ -795,7 +796,7 @@
 		input[type="button"]:hover,
 		.button:hover {
 			background-color: rgba(144, 144, 144, 0.075);
-			color: #545454 !important;
+			color: #202020 !important;
 		}
 
 		input[type="submit"]:active,
@@ -850,7 +851,7 @@
 		input[type="button"].special,
 		.button.special {
 			background-color: #e0555a;
-			color: #ffffff !important;
+			color: #545454 !important;
 		}
 
 			input[type="submit"].special:hover,
@@ -876,7 +877,7 @@
 		.button:disabled {
 			background-color: #646464 !important;
 			box-shadow: inset 0 -0.15em 0 0 rgba(0, 0, 0, 0.15);
-			color: #fff !important;
+			color: #545454 !important;
 			cursor: default;
 			opacity: 0.25;
 		}
