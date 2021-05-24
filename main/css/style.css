@@ -1323,6 +1323,8 @@
 	#main > .container {
 		position: relative;
 		background: #DEDEDE;
+		background-color: #DEDEDE;
+		color: #DEDEDE;
 		border-radius: 0.5em;
 		margin-bottom: 2em;
 		padding: 3em;
@@ -1356,7 +1358,7 @@
 /* Footer */
 
 	#footer {
-		color: #949494;
+		color: #DEDEDE;
 		padding: 4em 0;
 		text-align: center;
 	}
