@@ -1,3 +1,3 @@
 read
-https://ted9000.github.io
+https://ted9000.github.io/gameoflife
 me
