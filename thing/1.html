@@ -1,0 +1,453 @@
+<html>
+	<head>
+	<link rel="stylesheet" href="stylesheet.css">
+	<style>
+
+		.button {
+		  border: none;
+		  color: white;
+		  padding: 8px 16px;
+		  text-align: center;
+		  text-decoration: none;
+		  display: inline-block;
+		  margin: 5px 2.5px;
+		  cursor: cell;
+		}
+
+		.box {
+		  background-color: grey; 
+		  color: black; 
+		  border: 2px solid black;
+		  border-radius: 8px;
+		}
+
+		.button1 {
+		  font-size: 100px;
+		  transition-duration: 0.025s;
+		  background-color: grey; 
+		  color: black; 
+		  border: 4px solid black;
+		  border-radius: 8px;
+		}
+
+		.button1:active {
+		  transform: scale(1.05);
+		}
+
+		.button2 {
+  		  width: 265px;
+  		  height: 100px;
+		  transition-duration: 0.5s;
+		  text-align: left;
+		  font-size: 25px;
+		  background-color: grey; 
+		  color: black; 
+		  border: 4px solid black;
+		  border-radius: 8px;
+		}
+
+
+	</style>
+	</head>
+	<title>thing</title>
+	<body>
+	<center>
+	<a href="index.html" class ="button button1" style="font-size: 20; background-color: white;">Back to main</a>
+	<a href="2.html" class ="button button1" style="font-size: 20; background-color: white;">Page 2</a>
+	<a href="3.html" class ="button button1" style="font-size: 20; background-color: white;">Page 3</a>
+	<a href="4.html" class ="button button1" style="font-size: 20; background-color: white;">Page 4</a>
+	<a href="5.html" class ="button button1" style="font-size: 20; background-color: white;">Page 5</a>
+	<a href="6.html" class ="button button1" style="font-size: 20; background-color: white;">Page 6</a>
+	<br>
+	<p>
+	<button onclick="addClick()" class="button button1" id="button1"></button>
+	<br>
+	<br>
+	<button style="font-size: 25px;" class="box" id="cpsBox"></button>
+	</p>
+	<br>
+	<br>
+	<p>
+	<button onclick="buyMiner1()" class="button button2" id="miner1"></button>
+	<button onclick="buyMiner2()" class="button button2" id="miner2"></button>
+	<button onclick="buyMiner3()" class="button button2" id="miner3"></button>
+	<button onclick="buyMiner4()" class="button button2" id="miner4"></button>
+	<button onclick="buyMiner5()" class="button button2" id="miner5"></button>
+	<button onclick="buyMiner6()" class="button button2" id="miner6"></button>
+	<br><br><br><br><br>
+	<button style="height: 125px;" onclick="buyMiner1Upgrade()" class="button button2" id="miner1Upgrade">
+	<button style="height: 125px;" onclick="buyMiner2Upgrade()" class="button button2" id="miner2Upgrade"></button>
+	<button style="height: 125px;" onclick="buyMiner3Upgrade()" class="button button2" id="miner3Upgrade"></button>
+	<button style="height: 125px;" onclick="buyMiner4Upgrade()" class="button button2" id="miner4Upgrade"></button>
+	<button style="height: 125px;" onclick="buyMiner5Upgrade()" class="button button2" id="miner5Upgrade"></button>
+	<button style="height: 125px;" onclick="buyMiner6Upgrade()" class="button button2" id="miner6Upgrade"></button>
+	<br><br><br><br><br>
+	<center>
+	<button style="height: 125px;" onclick="buyClickerUpgrade()" class="button button2" id="clickerUpgrade"></button>
+	</p>
+	</center>
+	<script>
+	document.body.style.backgroundColor = "#505050";
+
+	var num = 0
+	var cps = 0
+	var m1x = 0
+	var m1y = 1
+	var m2x = 0
+	var m2y = 1
+	var m3x = 0
+	var m3y = 1
+	var m4x = 0
+	var m4y = 1
+	var m5x = 0
+	var m5y = 1
+	var m6x = 0
+	var m6y = 1
+	var cx = 0
+	var cy = 1
+
+	var click = 1
+	var clickers = 0
+
+	var miners1 = 0
+	var miners2 = 0
+	var miners3 = 0
+	var miners4 = 0
+	var miners5 = 0
+	var miners6 = 0
+
+	var miner1Cps = 0.1
+	var miner2Cps = 1
+	var miner3Cps = 8
+	var miner4Cps = 47
+	var miner5Cps = 260
+	var miner6Cps = 1400
+
+	var miner1Price = 15
+	var miner2Price = 100
+	var miner3Price = 1100
+	var miner4Price = 12000
+	var miner5Price = 130000
+	var miner6Price = 1400000
+
+	var miner1Upgrades = ["Miner1s are twice as efficient", 100, "Miner1s are twice as efficient", 500, "Miner1s are twice as efficient", 10000, "Miner1s are twice as efficient", 100000, "Miner1s are twice as efficient", 10000000, "", ""];
+	var miner2Upgrades = ["Miner2s are twice as efficient", 1000, "Miner2s are twice as efficient", 5000, "Miner2s are twice as efficient", 50000, "Miner2s are twice as efficient", 5000000, "Miner2s are twice as efficient", 500000000, "", ""];
+	var miner3Upgrades = ["Miner3s are twice as efficient", 11000, "Miner3s are twice as efficient", 55000, "Miner3s are twice as efficient", 550000, "Miner3s are twice as efficient", 55000000, "Miner3s are twice as efficient", 5500000000, "", ""];
+	var miner4Upgrades = ["Miner4s are twice as efficient", 120000, "Miner4s are twice as efficient", 600000, "Miner4s are twice as efficient", 6000000, "Miner4s are twice as efficient", 600000000, "Miner4s are twice as efficient", 60000000000, "", ""];
+	var miner5Upgrades = ["Miner5s are twice as efficient", 1300000, "Miner5s are twice as efficient", 6500000, "Miner5s are twice as efficient", 65000000, "Miner5s are twice as efficient", 6500000000, "Miner5s are twice as efficient", 650000000000, "", "",];
+	var miner6Upgrades = ["Miner6s are twice as efficient", 14000000, "Miner6s are twice as efficient", 70000000, "Miner6s are twice as efficient", 700000000, "Miner6s are twice as efficient", 70000000000, "Miner6s are twice as efficient", 7000000000000, "", ""];
+	var clickerUpgrades = ["Clicking gains +10% of your cps", 500, "Clicking gains +10% of your cps", 50000, "Clicking gains +10% of your cps", 5000000, "Clicking gains +10% of your cps", 500000000, "Clicking gains +10% of your cps", 50000000000, "Clicking gains +10% of your cps", 5000000000000, "", ""];
+
+	document.getElementById("miner1Upgrade").innerHTML = miner1Upgrades[m1x]+"<br />"+ "price - " + miner1Upgrades[m1y];
+	document.getElementById("miner2Upgrade").innerHTML = miner2Upgrades[m2x]+"<br />"+ "price - " + miner2Upgrades[m2y];
+	document.getElementById("miner3Upgrade").innerHTML = miner3Upgrades[m3x]+"<br />"+ "price - " + miner3Upgrades[m3y];
+	document.getElementById("miner4Upgrade").innerHTML = miner4Upgrades[m4x]+"<br />"+ "price - " + miner4Upgrades[m4y];
+	document.getElementById("miner5Upgrade").innerHTML = miner5Upgrades[m5x]+"<br />"+ "price - " + miner5Upgrades[m5y];
+	document.getElementById("miner6Upgrade").innerHTML = miner6Upgrades[m6x]+"<br />"+ "price - " + miner6Upgrades[m6y];
+
+	document.getElementById("clickerUpgrade").innerHTML = clickerUpgrades[cx]+"<br />"+ "price - " + clickerUpgrades[cy];
+
+	setText()
+
+	function addClick() {
+		num = num + click
+	}
+
+	function buyMiner1Upgrade() {
+		if (num >= Math.ceil(miner1Upgrades[m1y].toString())) {
+			num -= miner1Upgrades[m1y].toString()
+			miner1Cps *= 2
+			m1x += 2
+			m1y += 2
+			if (miner1Upgrades[m1x] == "") {
+				document.getElementById("miner1Upgrade").innerHTML = "";
+			} else {
+				document.getElementById("miner1Upgrade").innerHTML = miner1Upgrades[m1x]+"<br />"+ "price - " + miner1Upgrades[m1y];
+			}
+		}
+	}
+
+	function buyMiner2Upgrade() {
+		if (num >= Math.ceil(miner2Upgrades[m2y].toString())) {
+			num -= miner2Upgrades[m2y].toString()
+			miner2Cps *= 2
+			m2x += 2
+			m2y += 2
+			if (miner2Upgrades[m2x] == "") {
+				document.getElementById("miner2Upgrade").innerHTML = "";
+			} else {
+				document.getElementById("miner2Upgrade").innerHTML = miner2Upgrades[m2x]+"<br />"+ "price - " + miner2Upgrades[m2y];
+			}
+		}
+	}
+
+	function buyMiner3Upgrade() {
+		if (num >= Math.ceil(miner3Upgrades[m3y].toString())) {
+			num -= miner3Upgrades[m3y].toString()
+			miner3Cps *= 2
+			m3x += 2
+			m3y += 2
+			if (miner3Upgrades[m3x] == "") {
+				document.getElementById("miner3Upgrade").innerHTML = "";
+			} else {
+				document.getElementById("miner3Upgrade").innerHTML = miner3Upgrades[m3x]+"<br />"+ "price - " + miner3Upgrades[m3y];
+			}
+		}
+	}
+
+	function buyMiner4Upgrade() {
+		if (num >= Math.ceil(miner4Upgrades[m4y].toString())) {
+			num -= miner4Upgrades[m4y].toString()
+			miner4Cps *= 2
+			m4x += 2
+			m4y += 2
+			if (miner4Upgrades[m4x] == "") {
+				document.getElementById("miner4Upgrade").innerHTML = "";
+			} else {
+				document.getElementById("miner4Upgrade").innerHTML = miner4Upgrades[m4x]+"<br />"+ "price - " + miner4Upgrades[m4y];
+			}
+		}
+	}
+
+	function buyMiner5Upgrade() {
+		if (num >= Math.ceil(miner5Upgrades[m5y].toString())) {
+			num -= miner5Upgrades[m5y].toString()
+			miner5Cps *= 2
+			m5x += 2
+			m5y += 2
+			if (miner5Upgrades[m5x] == "") {
+				document.getElementById("miner5Upgrade").innerHTML = "";
+			} else {
+				document.getElementById("miner5Upgrade").innerHTML = miner5Upgrades[m5x]+"<br />"+ "price - " + miner5Upgrades[m5y];
+			}
+		}
+	}
+
+	function buyMiner6Upgrade() {
+		if (num >= Math.ceil(miner6Upgrades[m6y].toString())) {
+			num -= miner6Upgrades[m6y].toString()
+			miner6Cps *= 2
+			m6x += 2
+			m6y += 2
+			if (miner6Upgrades[m6x] == "") {
+				document.getElementById("miner6Upgrade").innerHTML = "";
+			} else {
+				document.getElementById("miner6Upgrade").innerHTML = miner6Upgrades[m6x]+"<br />"+ "price - " + miner6Upgrades[m6y];
+			}
+		}
+	}
+
+	function buyClickerUpgrade() {
+		if (num >= Math.ceil(clickerUpgrades[cy].toString())) {
+			num -= clickerUpgrades[cy].toString()
+			clickers += 1
+			cx += 2
+			cy += 2
+			if (clickerUpgrades[cx] == "") {
+				document.getElementById("clickerUpgrade").innerHTML = "";
+			} else {
+				document.getElementById("clickerUpgrade").innerHTML = clickerUpgrades[cx]+"<br />"+ "price - " + clickerUpgrades[cy];
+			}
+		}
+	}
+
+	function buyMiner1() {
+
+		if (num >= Math.ceil(miner1Price)) {
+			num -= Math.ceil(miner1Price)
+			miners1 += 1
+			miner1Price= 15 * (1.15**miners1)
+			document.getElementById('miner1').style.backgroundColor = "green";
+			document.getElementById('miner1').style.fontSize = 25;
+			setTimeout(function(){
+        		document.getElementById('miner1').style.backgroundColor = "grey";
+   			},200);
+			setTimeout(function(){
+        		document.getElementById('miner1').style.fontSize = 25;
+   			},50);
+		}
+	}
+
+	function buyMiner2() {
+
+		if (num >= Math.ceil(miner2Price)) {
+			num -= Math.ceil(miner2Price)
+			miners2 += 1
+			miner2Price= 100 * (1.15**miners2)
+			document.getElementById('miner2').style.backgroundColor = "green";
+			document.getElementById('miner2').style.fontSize = 25;
+			setTimeout(function(){
+        		document.getElementById('miner2').style.backgroundColor = "grey";
+   			},200);
+			setTimeout(function(){
+        		document.getElementById('miner2').style.fontSize = 25;
+   			},50);
+		}
+	}
+
+	function buyMiner3() {
+
+		if (num >= Math.ceil(miner3Price)) {
+			num -= Math.ceil(miner3Price)
+			miners3 += 1
+			miner3Price= 1100 * (1.15**miners3)
+			document.getElementById('miner3').style.backgroundColor = "green";
+			document.getElementById('miner3').style.fontSize = 25;
+			setTimeout(function(){
+        		document.getElementById('miner3').style.backgroundColor = "grey";
+   			},200);
+			setTimeout(function(){
+        		document.getElementById('miner3').style.fontSize = 25;
+   			},50);
+		}
+	}
+
+	function buyMiner4() {
+
+		if (num >= Math.ceil(miner4Price)) {
+			num -= Math.ceil(miner4Price)
+			miners4 += 1
+			miner4Price= 12000 * (1.15**miners4)
+			document.getElementById('miner4').style.backgroundColor = "green";
+			document.getElementById('miner4').style.fontSize = 25;
+			setTimeout(function(){
+        		document.getElementById('miner4').style.backgroundColor = "grey";
+   			},200);
+			setTimeout(function(){
+        		document.getElementById('miner4').style.fontSize = 25;
+   			},50);
+		}
+	}
+
+	function buyMiner5() {
+
+		if (num >= Math.ceil(miner5Price)) {
+			num -= Math.ceil(miner5Price)
+			miners5 += 1
+			miner5Price= 130000 * (1.15**miners5)
+			document.getElementById('miner5').style.backgroundColor = "green";
+			document.getElementById('miner5').style.fontSize = 25;
+			setTimeout(function(){
+        		document.getElementById('miner5').style.backgroundColor = "grey";
+   			},200);
+			setTimeout(function(){
+        		document.getElementById('miner5').style.fontSize = 25;
+   			},50);
+		}
+	}
+
+	function buyMiner6() {
+
+		if (num >= Math.ceil(miner6Price)) {
+			num -= Math.ceil(miner6Price)
+			miners6 += 1
+			miner6Price= 1400000 * (1.15**miners6)
+			document.getElementById('miner6').style.backgroundColor = "green";
+			document.getElementById('miner6').style.fontSize = 25;
+			setTimeout(function(){
+        		document.getElementById('miner6').style.backgroundColor = "grey";
+   			},200);
+			setTimeout(function(){
+        		document.getElementById('miner6').style.fontSize = 25;
+   			},50);
+		}
+	}
+
+	function setText() {
+		cps = miners1*miner1Cps + miners2*miner2Cps + miners3*miner3Cps + miners4*miner4Cps + miners5*miner5Cps + miners6*miner6Cps
+		if (clickers > 0) {
+			click = 1 + cps*(0.1*clickers)
+		}
+		num += cps/50
+		document.getElementById("button1").innerHTML = Math.ceil(num);
+		document.getElementById("miner1").innerHTML = "Miner1 - "+(miners1)+"<br />"+ "price - " + Math.ceil(miner1Price);
+		document.getElementById("miner2").innerHTML = "Miner2 - "+(miners2)+"<br />"+ "price - " + Math.ceil(miner2Price);
+		document.getElementById("miner3").innerHTML = "Miner3 - "+(miners3)+"<br />"+ "price - " + Math.ceil(miner3Price);
+		document.getElementById("miner4").innerHTML = "Miner4 - "+(miners4)+"<br />"+ "price - " + Math.ceil(miner4Price);
+		document.getElementById("miner5").innerHTML = "Miner5 - "+(miners5)+"<br />"+ "price - " + Math.ceil(miner5Price);
+		document.getElementById("miner6").innerHTML = "Miner6 - "+(miners6)+"<br />"+ "price - " + Math.ceil(miner6Price);
+		document.getElementById('cpsBox').innerHTML = (Math.ceil(cps * 10) / 10) + " cps";
+		setTimeout(setText, 20);
+
+		if (num < Math.ceil(miner1Price)) {
+			document.getElementById('miner1').style.opacity = 0.25;
+		} else {
+			document.getElementById('miner1').style.opacity = 1;
+		}
+
+		if (num < Math.ceil(miner2Price)) {
+			document.getElementById('miner2').style.opacity = 0.25;
+		} else {
+			document.getElementById('miner2').style.opacity = 1;
+		}
+
+		if (num < Math.ceil(miner3Price)) {
+			document.getElementById('miner3').style.opacity = 0.25;
+		} else {
+			document.getElementById('miner3').style.opacity = 1;
+		}
+
+		if (num < Math.ceil(miner4Price)) {
+			document.getElementById('miner4').style.opacity = 0.25;
+		} else {
+			document.getElementById('miner4').style.opacity = 1;
+		}
+
+		if (num < Math.ceil(miner5Price)) {
+			document.getElementById('miner5').style.opacity = 0.25;
+		} else {
+			document.getElementById('miner5').style.opacity = 1;
+		}
+
+		if (num < Math.ceil(miner6Price)) {
+			document.getElementById('miner6').style.opacity = 0.25;
+		} else {
+			document.getElementById('miner6').style.opacity = 1;
+		}
+
+		if (num < Math.ceil(miner1Upgrades[m1y])) {
+			document.getElementById('miner1Upgrade').style.opacity = 0.25;
+		} else {
+			document.getElementById('miner1Upgrade').style.opacity = 1;
+		}
+
+		if (num < Math.ceil(miner2Upgrades[m2y])) {
+			document.getElementById('miner2Upgrade').style.opacity = 0.25;
+		} else {
+			document.getElementById('miner2Upgrade').style.opacity = 1;
+		}
+
+		if (num < Math.ceil(miner3Upgrades[m3y])) {
+			document.getElementById('miner3Upgrade').style.opacity = 0.25;
+		} else {
+			document.getElementById('miner3Upgrade').style.opacity = 1;
+		}
+
+		if (num < Math.ceil(miner4Upgrades[m4y])) {
+			document.getElementById('miner4Upgrade').style.opacity = 0.25;
+		} else {
+			document.getElementById('miner4Upgrade').style.opacity = 1;
+		}
+
+		if (num < Math.ceil(miner5Upgrades[m5y])) {
+			document.getElementById('miner5Upgrade').style.opacity = 0.25;
+		} else {
+			document.getElementById('miner5Upgrade').style.opacity = 1;
+		}
+
+		if (num < Math.ceil(miner6Upgrades[m6y])) {
+			document.getElementById('miner6Upgrade').style.opacity = 0.25;
+		} else {
+			document.getElementById('miner6Upgrade').style.opacity = 1;
+		}
+
+		if (num < Math.ceil(clickerUpgrades[cy])) {
+			document.getElementById('clickerUpgrade').style.opacity = 0.25;
+		} else {
+			document.getElementById('clickerUpgrade').style.opacity = 1;
+		}
+	}
+
+	</script>
+	</body>
+</html>
