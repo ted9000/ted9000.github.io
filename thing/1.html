@@ -22,6 +22,7 @@
 		}
 
 		.button1 {
+
 		  font-size: 100px;
 		  transition-duration: 0.025s;
 		  background-color: grey; 
@@ -84,6 +85,7 @@
 	<br><br><br><br><br>
 	<center>
 	<button style="height: 125px;" onclick="buyClickerUpgrade()" class="button button2" id="clickerUpgrade"></button>
+	<button style="height: 125px;" onclick="buyCPSUpgrade()" class="button button2" id="CPSUpgrade"></button>
 	</p>
 	</center>
 	<script>
@@ -105,9 +107,12 @@
 	var m6y = 1
 	var cx = 0
 	var cy = 1
+	var cpsx = 0
+	var cpsy = 1
 
 	var click = 1
 	var clickers = 0
+	var cpss = 0
 
 	var miners1 = 0
 	var miners2 = 0
@@ -136,7 +141,8 @@
 	var miner4Upgrades = ["Miner4s are twice as efficient", 120000, "Miner4s are twice as efficient", 600000, "Miner4s are twice as efficient", 6000000, "Miner4s are twice as efficient", 600000000, "Miner4s are twice as efficient", 60000000000, "", ""];
 	var miner5Upgrades = ["Miner5s are twice as efficient", 1300000, "Miner5s are twice as efficient", 6500000, "Miner5s are twice as efficient", 65000000, "Miner5s are twice as efficient", 6500000000, "Miner5s are twice as efficient", 650000000000, "", "",];
 	var miner6Upgrades = ["Miner6s are twice as efficient", 14000000, "Miner6s are twice as efficient", 70000000, "Miner6s are twice as efficient", 700000000, "Miner6s are twice as efficient", 70000000000, "Miner6s are twice as efficient", 7000000000000, "", ""];
-	var clickerUpgrades = ["Clicking gains +10% of your cps", 500, "Clicking gains +10% of your cps", 50000, "Clicking gains +10% of your cps", 5000000, "Clicking gains +10% of your cps", 500000000, "Clicking gains +10% of your cps", 50000000000, "Clicking gains +10% of your cps", 5000000000000, "", ""];
+	var clickerUpgrades = ["Clicking gains +1% of your cps", 500, "Clicking gains +1% of your cps", 50000, "Clicking gains +1% of your cps", 5000000, "Clicking gains +1% of your cps", 500000000, "Clicking gains +1% of your cps", 50000000000, "Clicking gains +1% of your cps", 5000000000000, "", ""];
+	var cpsUpgrades  = ["CPS +5% <br />", 1000, "CPS +5% <br />", 10000, "CPS +5% <br />", 50000, "CPS +5% <br />", 100000, "CPS +5% <br />", 500000, "CPS +5% <br />", 1000000, "CPS +5% <br />", 5000000, "CPS +5% <br />", 10000000, "CPS +5% <br />", 50000000, "CPS +5% <br />", 50000000, "CPS +5% <br />", 50000000, "CPS +5% <br />", 50000000, "CPS +5% <br />", 50000000, "CPS +5% <br />", 100000000, "CPS +5% <br />", 100000000, "CPS +5% <br />", 100000000, "CPS +5% <br />", 100000000, "CPS +5% <br />", 100000000, "CPS +5% <br />", 500000000, "CPS +5% <br />", 500000000, "CPS +5% <br />", 1000000000, "CPS +5% <br />", 5000000000, "CPS +5% <br />", 10000000000, "CPS +5%", 50000000000, "", ""];
 
 	document.getElementById("miner1Upgrade").innerHTML = miner1Upgrades[m1x]+"<br />"+ "price - " + miner1Upgrades[m1y];
 	document.getElementById("miner2Upgrade").innerHTML = miner2Upgrades[m2x]+"<br />"+ "price - " + miner2Upgrades[m2y];
@@ -146,6 +152,8 @@
 	document.getElementById("miner6Upgrade").innerHTML = miner6Upgrades[m6x]+"<br />"+ "price - " + miner6Upgrades[m6y];
 
 	document.getElementById("clickerUpgrade").innerHTML = clickerUpgrades[cx]+"<br />"+ "price - " + clickerUpgrades[cy];
+	document.getElementById("CPSUpgrade").innerHTML = cpsUpgrades[cpsx]+"<br />"+ "price - " + cpsUpgrades[cpsy];
+
 
 	setText()
 
@@ -160,7 +168,7 @@
 			m1x += 2
 			m1y += 2
 			if (miner1Upgrades[m1x] == "") {
-				document.getElementById("miner1Upgrade").innerHTML = "";
+				document.getElementById("miner1Upgrade").remove();
 			} else {
 				document.getElementById("miner1Upgrade").innerHTML = miner1Upgrades[m1x]+"<br />"+ "price - " + miner1Upgrades[m1y];
 			}
@@ -174,7 +182,7 @@
 			m2x += 2
 			m2y += 2
 			if (miner2Upgrades[m2x] == "") {
-				document.getElementById("miner2Upgrade").innerHTML = "";
+				document.getElementById("miner2Upgrade").remove();
 			} else {
 				document.getElementById("miner2Upgrade").innerHTML = miner2Upgrades[m2x]+"<br />"+ "price - " + miner2Upgrades[m2y];
 			}
@@ -188,7 +196,7 @@
 			m3x += 2
 			m3y += 2
 			if (miner3Upgrades[m3x] == "") {
-				document.getElementById("miner3Upgrade").innerHTML = "";
+				document.getElementById("miner3Upgrade").remove();
 			} else {
 				document.getElementById("miner3Upgrade").innerHTML = miner3Upgrades[m3x]+"<br />"+ "price - " + miner3Upgrades[m3y];
 			}
@@ -202,7 +210,7 @@
 			m4x += 2
 			m4y += 2
 			if (miner4Upgrades[m4x] == "") {
-				document.getElementById("miner4Upgrade").innerHTML = "";
+				document.getElementById("miner4Upgrade").remove();
 			} else {
 				document.getElementById("miner4Upgrade").innerHTML = miner4Upgrades[m4x]+"<br />"+ "price - " + miner4Upgrades[m4y];
 			}
@@ -216,7 +224,7 @@
 			m5x += 2
 			m5y += 2
 			if (miner5Upgrades[m5x] == "") {
-				document.getElementById("miner5Upgrade").innerHTML = "";
+				document.getElementById("miner5Upgrade").remove();
 			} else {
 				document.getElementById("miner5Upgrade").innerHTML = miner5Upgrades[m5x]+"<br />"+ "price - " + miner5Upgrades[m5y];
 			}
@@ -230,7 +238,7 @@
 			m6x += 2
 			m6y += 2
 			if (miner6Upgrades[m6x] == "") {
-				document.getElementById("miner6Upgrade").innerHTML = "";
+				document.getElementById("miner6Upgrade").remove();
 			} else {
 				document.getElementById("miner6Upgrade").innerHTML = miner6Upgrades[m6x]+"<br />"+ "price - " + miner6Upgrades[m6y];
 			}
@@ -244,9 +252,23 @@
 			cx += 2
 			cy += 2
 			if (clickerUpgrades[cx] == "") {
-				document.getElementById("clickerUpgrade").innerHTML = "";
+				document.getElementById("clickerUpgrade").remove();
 			} else {
 				document.getElementById("clickerUpgrade").innerHTML = clickerUpgrades[cx]+"<br />"+ "price - " + clickerUpgrades[cy];
+			}
+		}
+	}
+
+	function buyCPSUpgrade() {
+		if (num >= Math.ceil(cpsUpgrades[cpsy].toString())) {
+			num -= cpsUpgrades[cpsy].toString()
+			cpss += 1
+			cpsx += 2
+			cpsy += 2
+			if (cpsUpgrades[cpsx] == "") {
+				document.getElementById("CPSUpgrade").remove();
+			} else {
+				document.getElementById("CPSUpgrade").innerHTML = cpsUpgrades[cpsx]+"<br />"+ "price - " + cpsUpgrades[cpsy];
 			}
 		}
 	}
@@ -354,9 +376,12 @@
 	}
 
 	function setText() {
-		cps = miners1*miner1Cps + miners2*miner2Cps + miners3*miner3Cps + miners4*miner4Cps + miners5*miner5Cps + miners6*miner6Cps
+		cps = (miners1*miner1Cps + miners2*miner2Cps + miners3*miner3Cps + miners4*miner4Cps + miners5*miner5Cps + miners6*miner6Cps)
+		if (cpss > 0) {
+			cps = cps + cps*(cpss*0.05)
+		}
 		if (clickers > 0) {
-			click = 1 + cps*(0.1*clickers)
+			click = 1 + cps*(0.01*clickers)
 		}
 		num += cps/50
 		document.getElementById("button1").innerHTML = Math.ceil(num);
@@ -445,6 +470,12 @@
 			document.getElementById('clickerUpgrade').style.opacity = 0.25;
 		} else {
 			document.getElementById('clickerUpgrade').style.opacity = 1;
+		}
+
+		if (num < Math.ceil(cpsUpgrades[cpsy])) {
+			document.getElementById('CPSUpgrade').style.opacity = 0.25;
+		} else {
+			document.getElementById('CPSUpgrade').style.opacity = 1;
 		}
 	}
 
