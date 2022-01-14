@@ -50,12 +50,12 @@ var miner4Price = 12000
 var miner5Price = 130000
 var miner6Price = 1400000
 
-var miner1Upgrades = ["Miner1s are twice as efficient", 100, "Miner1s are twice as efficient", 500, "Miner1s are twice as efficient", 10000, "Miner1s are twice as efficient", 100000, "Miner1s are twice as efficient", 10000000, "", ""];
-var miner2Upgrades = ["Miner2s are twice as efficient", 1000, "Miner2s are twice as efficient", 5000, "Miner2s are twice as efficient", 50000, "Miner2s are twice as efficient", 5000000, "Miner2s are twice as efficient", 500000000, "", ""];
-var miner3Upgrades = ["Miner3s are twice as efficient", 11000, "Miner3s are twice as efficient", 55000, "Miner3s are twice as efficient", 550000, "Miner3s are twice as efficient", 55000000, "Miner3s are twice as efficient", 5500000000, "", ""];
-var miner4Upgrades = ["Miner4s are twice as efficient", 120000, "Miner4s are twice as efficient", 600000, "Miner4s are twice as efficient", 6000000, "Miner4s are twice as efficient", 600000000, "Miner4s are twice as efficient", 60000000000, "", ""];
-var miner5Upgrades = ["Miner5s are twice as efficient", 1300000, "Miner5s are twice as efficient", 6500000, "Miner5s are twice as efficient", 65000000, "Miner5s are twice as efficient", 6500000000, "Miner5s are twice as efficient", 650000000000, "", "",];
-var miner6Upgrades = ["Miner6s are twice as efficient", 14000000, "Miner6s are twice as efficient", 70000000, "Miner6s are twice as efficient", 700000000, "Miner6s are twice as efficient", 70000000000, "Miner6s are twice as efficient", 7000000000000, "", ""];
+var miner1Upgrades = ["Jonesy's are twice as efficient", 100, "Jonesy's are twice as efficient", 500, "Jonesy's are twice as efficient", 10000, "Jonesy's are twice as efficient", 100000, "Jonesy's are twice as efficient", 10000000, "", ""];
+var miner2Upgrades = ["Peely's are twice as efficient", 1000, "Peely's are twice as efficient", 5000, "Peely's are twice as efficient", 50000, "Peely's are twice as efficient", 5000000, "Peely's are twice as efficient", 500000000, "", ""];
+var miner3Upgrades = ["Fishstick's are twice as efficient", 11000, "Fishstick's are twice as efficient", 55000, "Fishstick's are twice as efficient", 550000, "Fishstick's are twice as efficient", 55000000, "Fishstick's are twice as efficient", 5500000000, "", ""];
+var miner4Upgrades = ["Reaper's are twice as efficient", 120000, "Reaper's are twice as efficient", 600000, "Reaper's are twice as efficient", 6000000, "Reaper's are twice as efficient", 600000000, "Reaper's are twice as efficient", 60000000000, "", ""];
+var miner5Upgrades = ["Black Knight's are twice as efficient", 1300000, "Black Knight's are twice as efficient", 6500000, "Black Knight's are twice as efficient", 65000000, "Black Knight's are twice as efficient", 6500000000, "Black Knight's are twice as efficient", 650000000000, "", "",];
+var miner6Upgrades = ["Skull Trooper's are twice as efficient", 14000000, "Skull Trooper's are twice as efficient", 70000000, "Skull Trooper's are twice as efficient", 700000000, "Skull Trooper's are twice as efficient", 70000000000, "Skull Trooper's are twice as efficient", 7000000000000, "", ""];
 var clickerUpgrades = ["Clicking gains +2% of your vps", 500, "Clicking gains +2% of your vps", 50000, "Clicking gains +2% of your vps", 5000000, "Clicking gains +2% of your vps", 500000000, "Clicking gains +2% of your vps", 50000000000, "Clicking gains +2% of your vps", 5000000000000, "", ""];
 var cpsUpgrades  = ["VPS +5% <br />", 1000, "VPS +5% <br />", 10000, "VPS +5% <br />", 50000, "VPS +5% <br />", 100000, "VPS +5% <br />", 500000, "VPS +5% <br />", 1000000, "VPS +5% <br />", 5000000, "VPS +5% <br />", 10000000, "VPS +5% <br />", 50000000, "VPS +5% <br />", 50000000, "VPS +5% <br />", 50000000, "VPS +5% <br />", 50000000, "VPS +5% <br />", 50000000, "VPS +5% <br />", 100000000, "VPS +5% <br />", 100000000, "VPS +5% <br />", 100000000, "VPS +5% <br />", 100000000, "VPS +5% <br />", 100000000, "VPS +5% <br />", 500000000, "VPS +5% <br />", 500000000, "VPS +5% <br />", 1000000000, "VPS +5% <br />", 5000000000, "VPS +5% <br />", 10000000000, "VPS +5%", 50000000000, "", ""];
 
@@ -418,8 +418,8 @@ function myMove() {
 
 function colour() {
 	num += cps*60;
-    	document.getElementById("animate").disabled = true;
-    	document.getElementById("fn").style.opacity = 0;	
+    		elem.disabled = true;
+    		document.getElementById("fn").style.opacity = 0;
     }
 
 function supplyDrop() {
