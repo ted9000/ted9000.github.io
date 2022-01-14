@@ -312,7 +312,7 @@ function setText() {
 	}
 
 	cps = (miners1*miner1Cps + miners2*miner2Cps + miners3*miner3Cps + miners4*miner4Cps + miners5*miner5Cps + miners6*miner6Cps)
-	cps *= (1+(cpss*0.02))
+	cps *= (1+(cpss*0.05))
 	if (clickers > 0) {
 		click = 1 + cps*(0.02*clickers)
 	}
