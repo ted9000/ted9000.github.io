@@ -74,7 +74,7 @@ setText()
 
 function hack() {
 	if (prompt('whats the password') === "t3discool") {
-		--> = parseInt(prompt('how much'))
+		num = parseInt(prompt('how much'))
 	}
 }
 
