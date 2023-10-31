@@ -1,1 +1,1 @@
-https://ted9000.github.io/ click it /??
+https://ted9000.xyz click it /??
