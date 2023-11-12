@@ -1,1 +1,3 @@
-https://ted9000.xyz click it /??
+Ted Arlidge
+
+https://www.ted9000.xyz
